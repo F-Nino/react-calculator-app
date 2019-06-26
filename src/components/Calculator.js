@@ -1,8 +1,10 @@
 import React from "react";
+import "../App.css";
 
 //Components
 import ScreenRow from "./ScreenRow";
 import Button from "./Button";
+import Keypad from "./Keypad";
 
 class Calculator extends React.Component {
   constructor() {
@@ -15,32 +17,16 @@ class Calculator extends React.Component {
   }
   render() {
     return (
-      <div className="calculator">
-        <div className="title">CalcApp</div>
-        <ScreenRow question={this.state.question} answer={this.state.answer} />
-        <div className="button-row">
-          <Button label={"7"} handleClick={this.handleClick} type="input" />
-          <Button label={"8"} handleClick={this.handleClick} type="input" />
-          <Button label={"9"} handleClick={this.handleClick} type="input" />
-          <Button label={"*"} handleClick={this.handleClick} type="action" />
+      <div className="ui segment">
+        <div className="title">Calculator</div>
+        <div className="ui segment center">
+          <ScreenRow
+            question={this.state.question}
+            answer={this.state.answer}
+          />
         </div>
-        <div className="button-row">
-          <Button label={"4"} handleClick={this.handleClick} type="input" />
-          <Button label={"5"} handleClick={this.handleClick} type="input" />
-          <Button label={"6"} handleClick={this.handleClick} type="input" />
-          <Button label={"/"} handleClick={this.handleClick} type="action" />
-        </div>
-        <div className="button-row">
-          <Button label={"1"} handleClick={this.handleClick} type="input" />
-          <Button label={"2"} handleClick={this.handleClick} type="input" />
-          <Button label={"3"} handleClick={this.handleClick} type="input" />
-          <Button label={"+"} handleClick={this.handleClick} type="action" />
-        </div>
-        <div className="button-row">
-          <Button label={"0"} handleClick={this.handleClick} type="input" />
-          <Button label={"."} handleClick={this.handleClick} type="input" />
-          <Button label={"="} handleClick={this.handleClick} type="action" />
-          <Button label={"C"} handleClick={this.handleClick} type="action" />
+        <div className="ui segment center">
+          <Keypad handleClick={this.handleClick} />
         </div>
       </div>
     );

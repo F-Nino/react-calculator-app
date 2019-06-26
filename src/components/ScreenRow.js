@@ -4,9 +4,13 @@ import Display from "./Display";
 
 const ScreenRow = props => {
   return (
-    <div className="Screen">
-      <Display value={props.question} />
-      <Display value={props.answer} />
+    <div className="ui grid">
+      <div className="ui row">
+        <Display value={props.question} />
+      </div>
+      <div className="ui row">
+        <Display value={props.answer} />
+      </div>
     </div>
   );
 };
